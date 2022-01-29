@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { filtertextpipe } from './pipe/filtertext.pipe';
 
-import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo.component';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    TodoComponent,
+    filtertextpipe,
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,Ng2SearchPipeModule,FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [TodoComponent]
 })
 export class AppModule { }

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-5 mx-auto">
+            <h3 class="bg-primary text-white p-3">
+               
+            </h3>
+
+           
+
+            <div class="mb-3" >
+                
+                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  
+                Please input search text">
+               
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Capital</th>
+                        <th>Region</th>
+                        <th>Flag</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let country of countries | filter:searchText; let i = index;">
+                         <td>{{i+1}}</td> 
+                        <td>{{country.name}}</td>
+                         <td>{{country.capital}}</td> 
+                         <td>{{country.region}}</td>
+                         <td>
+                             <img src={{country.flag}} alt="" width="70px" height="50px">
+                         </td> 
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
