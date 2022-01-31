@@ -1,21 +1,24 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { filtertextpipe } from './pipe/filtertext.pipe';
+// import { filtertextpipe } from './pipe/filtertext.pipe';
+ import { FilterPipe } from './pipe/filtertext.pipe';
 
 import { TodoComponent } from './todo/todo.component';
+import { FilterCapitalPipe } from './pipe/filter-capital.pipe';
 
 
 
 @NgModule({
   declarations: [
     TodoComponent,
-    filtertextpipe,
+    // filtertextpipe
+    FilterPipe,
+    FilterCapitalPipe,
 
   ],
   imports: [
-    BrowserModule,Ng2SearchPipeModule,FormsModule
+    BrowserModule,FormsModule
   ],
   providers: [],
   bootstrap: [TodoComponent]

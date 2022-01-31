@@ -13,7 +13,7 @@ export class TodoComponent implements OnInit {
 
 countries: Country[]=[];
 searchText:any;
- 
+searchCapital:any;
 
 message = "";
 

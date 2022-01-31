@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <div class="container">
     <div class="row">
         <div class="col-5 mx-auto">
@@ -7,14 +8,22 @@
 
            
 
-            <div class="mb-3" >
+             <div class=" form-group mb-3" >
                 
-                <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  
-                Please input search text">
+                    
+                 <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  
+                Please input search text"> -->
                
-            </div>
+                 <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                [(ngModel)]="searchText" placeholder="Enter text to search" 
+                autofocus> 
+                <input type="text" class="form-control" id="search-text" aria-describedby="search-text" 
+                [(ngModel)]="searchCapital" placeholder="Enter text to search capital" 
+                autofocus> 
+            </div> 
+          
 
-            <table class="table table-bordered">
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th></th>
@@ -25,7 +34,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let country of countries | filter:searchText; let i = index;">
+                     <tr *ngFor="let country of countries | appFilter: searchText | filterCapital: searchCapital; let i = index;"> 
+                        
                          <td>{{i+1}}</td> 
                         <td>{{country.name}}</td>
                          <td>{{country.capital}}</td> 
