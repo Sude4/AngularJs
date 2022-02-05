@@ -19,10 +19,10 @@ export class FilterPipe implements PipeTransform {
      if (!searchText) {
        return items;
      }
-     searchText = searchText.toLocaleLowerCase();
+     searchText = searchText.toLowerCase();
 
      return items.filter(it => {
-       return Object.values(it).toString().toLocaleLowerCase().includes(searchText) ;
+       return Object.values(it).toString().toLowerCase().includes(searchText) ;
      });
    }
  }

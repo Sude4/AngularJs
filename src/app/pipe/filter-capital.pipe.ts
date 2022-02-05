@@ -13,10 +13,10 @@ export class FilterCapitalPipe implements PipeTransform {
      if (!searchText) {
        return items;
      }
-     searchText = searchText.toLocaleLowerCase();
+     searchText = searchText.toLowerCase();
 
      return items.filter(it => {
-       return it.capital?.toLocaleLowerCase().includes(searchText); ;
+       return it.capital?.toLowerCase().includes(searchText); ;
      });
    }
  }
